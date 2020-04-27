@@ -1,0 +1,85 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Bangers", cursive;
+  background: url("background.jpg") no-repeat center center/cover;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+  height: 100vh;
+  margin: auto;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 500px;
+  width: 300px;
+  background: url("CrystalMethyd.jpg") no-repeat center center/cover;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.box:after {
+  content: "";
+  position: absolute;
+  top: -250px;
+  height: 500px;
+  width: 300px;
+  background: hotpink;
+  transition: all 500ms;
+  opacity: 0.9;
+}
+
+.box:hover:after {
+  transform: translateY(-250px);
+  opacity: 0.5;
+}
+.box:before {
+  content: "";
+  position: absolute;
+  top: 250px;
+  height: 500px;
+  width: 300px;
+  background: hotpink;
+  transition: all 500ms;
+  opacity: 0.9;
+}
+
+.box:hover:before {
+  transform: translateY(250px);
+  opacity: 0.5;
+}
+
+.text {
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  transition: all 500ms;
+  opacity: 1;
+  text-shadow: 5px 5px 5px black;
+}
+
+.box:hover .text {
+  transform: translateY(-200px);
+  opacity: 0;
+}
